@@ -1,22 +1,23 @@
-
+//Mise à jour du basketPreview
+basketPreview();
 // récupération de l'id du produit
 
 
 
-const searchPaarams = new URLSearchParams(location.search);
-const newId = searchPaarams.get("_id");
+const searchParams = new URLSearchParams(location.search);
+const newId = searchParams.get("_id");
 
-//modification le nom API
-
+//modification de l'adresse d'appel à l'API
 const newUrl = `https://teddies-api.herokuapp.com/api/cameras/${newId}`;
 
 fetch(newUrl)
-.then((response) => response.json() )
-.then((data) => {
-const product = data;
-addCard(data);
-});
-     function addCard(product) {
+    .then((response) => response.json())
+    .then((data) => {
+        const product = data;
+        addCard(data);
+
+        // fonction pour la création de la card de la page produit
+        function addCard(product) {
 
             // insertion des information de la card du produit
             const selectionProductImage = document.getElementById("productImage");
@@ -38,9 +39,50 @@ addCard(data);
             addLenses(product);
         }
 
-           function addLenses(product) {
+        function addLenses(product) {
             const versionChoice = document.getElementById("option");
             for (let lenses of product.lenses) {
                 versionChoice.innerHTML += `<option value="${lenses}">${lenses}</option>`;
             }
         }
+
+        const btnAddBasket = document.getElementById("btnAddBasket");
+        btnAddBasket.addEventListener("click", (e) => {
+            e.preventDefault();
+            const list = document.getElementById("option");
+            const quantity = document.getElementById("quantity");
+
+            // créer un nouveau produit
+            let objectProduct = new Product(
+                newId,
+                product.name,
+                product.description,
+                product.price,
+                list.value,
+                quantity.value,
+                product.imageUrl
+            );
+            // vérifie s'il est déja présent
+            // si oui, dejaPresent en true et sauvegarde sa place dans le localStorage
+            let isAlreadyPresent = false;
+            let indexModification;
+            for (products of basket) {
+                switch (products.option) {
+                    case objectProduct.option:
+                        isAlreadyPresent = true;
+                        indexModification = basket.indexOf(products);
+                }
+            }
+
+            // si déjaPresent incrémente seulement la quantité
+            if (isAlreadyPresent) {
+                basket[indexModification].quantity =
+                    +basket[indexModification].quantity + +objectProduct.quantity;
+                localStorage.setItem("cameras", JSON.stringify(basket));
+                // si non, ajoute le produit au localStorage
+            } else {
+                basket.push(objectProduct);
+                localStorage.setItem("cameras", JSON.stringify(basket));
+            }
+        });
+    });

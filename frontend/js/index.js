@@ -37,6 +37,9 @@
 // }
 
 // Index.js file commerce
+
+//Mise à jour du basketPreview
+basketPreview();
 //fetch de l'URL
 fetch(url)
 .then((response) => response.json())
