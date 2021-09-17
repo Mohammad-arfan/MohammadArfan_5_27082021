@@ -32,7 +32,7 @@
       <div class="container-fluid mx-2 mx-lg-5">
         <img
           class="img-fluid mx-4 mx-lg-0 mr-auto w-25"
-          src="/images/logo.png"
+          src="../images/logo.png"
           alt="logo orinoco"
         />
         <button
@@ -52,7 +52,10 @@
             style="--bs-scroll-height: 100px"
           >
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/index.html"
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="../index.html"
                 >Accueil</a
               >
             </li>
@@ -156,7 +159,7 @@
             type="text"
             class="form-control"
             id="firstName"
-            placeholder="Ex: 'ori'"
+            placeholder="Votre Prenom"
             pattern="^(([a-zA-ZÀ-ÿ]+[\s\-]{1}[a-zA-ZÀ-ÿ]+)|([a-zA-ZÀ-ÿ]+))$"
             required
           />
@@ -167,7 +170,7 @@
             type="text"
             class="form-control"
             id="lastName"
-            placeholder="Ex: 'noco'"
+            placeholder="Votre Nom Famille"
             pattern="^(([a-zA-ZÀ-ÿ]+[\s\-]{1}[a-zA-ZÀ-ÿ]+)|([a-zA-ZÀ-ÿ]+))$"
             required
           />
@@ -182,7 +185,7 @@
               type="text"
               class="form-control"
               id="email"
-              placeholder="Ex: 'orinoco@mail.fr'"
+              placeholder="orinoco@mail.fr"
               aria-describedby="inputGroupPrepend"
               pattern="^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]{2,}\.[a-z]{2,4}$"
               required
@@ -222,6 +225,7 @@
             />
             <label class="form-check-label" for="invalidCheck2">
               <p
+                class="text-primary"
                 data-bs-toggle="tooltip"
                 data-bs-placement="top"
                 title="Termes et conditions de vente : Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum consequatur quos quis, asperiores nostrum cupiditate consequuntur earum quae saepe distinctio!"
@@ -234,7 +238,7 @@
 
         <div class="text-center my-5 d-md-flex justify-content-md-end">
           <div class="col-12 col-sm-6 my-4">
-            <button type="submit" class="btn btn-secondary mx-5" id="order">
+            <button type="submit" class="btn btn-success mx-5" id="order">
               Passer la commande
             </button>
           </div>

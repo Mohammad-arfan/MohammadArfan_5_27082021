@@ -1,0 +1,8 @@
+body {
+  background-color: rgb(55, 155, 180, 0.2);
+}
+.nav-item {
+  padding-right: 20px;
+  font-weight: 600;
+  font-size: 20px;
+}
