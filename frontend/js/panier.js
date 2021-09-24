@@ -143,9 +143,7 @@ if (basket.length < 1) {
                 })
                 .catch((erreur) => console.log("erreur : " + erreur));
         } else {
-            alert(
-                "Veuillez correctement renseigner l'entièreté du formulaire pour valider votre commande."
-            );
+           
         }
     });
 }
