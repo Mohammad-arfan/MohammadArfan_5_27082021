@@ -66,13 +66,76 @@ if (basket.length < 1) {
     });
 
     //validation du formulaire et envoie en POST
-    const order = document.getElementById("order");
     const regexName = /^(([a-zA-ZÀ-ÿ]+[\s\-]{1}[a-zA-ZÀ-ÿ]+)|([a-zA-ZÀ-ÿ]+))$/;
+     const regexMail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]{2,}\.[a-z]{2,4}$/;
+    const order = document.getElementById("order");
     const regexCity = /^(([a-zA-ZÀ-ÿ]+[\s\-]{1}[a-zA-ZÀ-ÿ]+)|([a-zA-ZÀ-ÿ]+)){1,10}$/;
-    const regexMail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]{2,}\.[a-z]{2,4}$/;
     const regexAddress = /^(([a-zA-ZÀ-ÿ0-9]+[\s\-]{1}[a-zA-ZÀ-ÿ0-9]+)){1,10}$/;
     const checkBox = document.getElementById("invalidCheck2");
 
+
+
+const name = document.getElementById('firstName');
+name.addEventListener('blur', ()=>{
+    console.log("name is blurred");
+    // Validate name here
+  
+    let str = firstName.value;
+    console.log(regexName, str);
+    if(regexName.test(str)){
+        console.log('Your name is valid');
+       name.classList.remove('is-invalid');
+      
+        validUser = true;
+    }
+    else{
+        console.log('Your name is not valid');
+        name.classList.add('is-invalid');
+        validUser = false;
+        
+    }
+})
+
+const nom = document.getElementById('lastName');
+nom.addEventListener('blur', ()=>{
+    console.log("name is blurred");
+    // Validate name here
+   
+    let str = lastName.value;
+    console.log(regexName, str);
+    if(regexName.test(str)){
+        console.log('Your name is valid');
+       nom.classList.remove('is-invalid');
+      
+        validUser = true;
+    }
+    else{
+        console.log('Your name is not valid');
+        nom.classList.add('is-invalid');
+        validUser = false;
+        
+    }
+})
+const email = document.getElementById('email');
+email.addEventListener('blur', ()=>{
+    console.log("email is blurred");
+    // Validate name here
+       
+    let str = email.value;
+    console.log(regexMail, str);
+    if(regexMail.test(str)){
+        console.log('Your Email is valid');
+       email.classList.remove('is-invalid');
+      
+        validUser = true;
+    }
+    else{
+        console.log('Your Email is not valid');
+        email.classList.add('is-invalid');
+        validUser = false;
+        
+    }
+})
     order.addEventListener("click", (event) => {
         // on prépare les infos pour l'envoie en POST
         let contact = {
@@ -143,7 +206,9 @@ if (basket.length < 1) {
                 })
                 .catch((erreur) => console.log("erreur : " + erreur));
         } else {
-           
+           alert(
+                "Veuillez correctement renseigner l'entièreté du formulaire pour valider votre commande."
+            );
         }
     });
 }

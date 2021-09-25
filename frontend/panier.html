@@ -160,9 +160,10 @@
             class="form-control"
             id="firstName"
             placeholder="Votre Prenom"
-            pattern="^(([a-zA-ZÀ-ÿ]+[\s\-]{1}[a-zA-ZÀ-ÿ]+)|([a-zA-ZÀ-ÿ]+))$"
-            required
           />
+          <small id="namevalid" class="form-text text-muted invalid-feedback">
+            Votre prenom ne pas Valid
+          </small>
         </div>
         <div class="col-md-4">
           <label for="validationDefault02" class="form-label">Nom</label>
@@ -171,9 +172,10 @@
             class="form-control"
             id="lastName"
             placeholder="Votre Nom "
-            pattern="^(([a-zA-ZÀ-ÿ]+[\s\-]{1}[a-zA-ZÀ-ÿ]+)|([a-zA-ZÀ-ÿ]+))$"
-            required
           />
+          <small id="namevalid" class="form-text text-muted invalid-feedback">
+            Votre nom ne pas Valid
+          </small>
         </div>
         <div class="col-md-4">
           <label for="validationDefaultUsername" class="form-label"
@@ -187,9 +189,13 @@
               id="email"
               placeholder="orinoco@mail.fr"
               aria-describedby="inputGroupPrepend"
-              pattern="^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]{2,}\.[a-z]{2,4}$"
-              required
             />
+            <small
+              id="emailvalid"
+              class="form-text text-muted invalid-feedback"
+            >
+              Votre Email ne pas valid.
+            </small>
           </div>
         </div>
         <div class="col-md-6">
