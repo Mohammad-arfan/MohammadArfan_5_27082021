@@ -162,7 +162,7 @@
             placeholder="Votre Prenom"
           />
           <small id="namevalid" class="form-text text-muted invalid-feedback">
-            Votre prenom ne pas Valid
+            Votre prenom n'est pas valide.
           </small>
         </div>
         <div class="col-md-4">
@@ -174,7 +174,7 @@
             placeholder="Votre Nom "
           />
           <small id="namevalid" class="form-text text-muted invalid-feedback">
-            Votre nom ne pas Valid
+            Votre nom n'est pas valide.
           </small>
         </div>
         <div class="col-md-4">
@@ -194,7 +194,7 @@
               id="emailvalid"
               class="form-text text-muted invalid-feedback"
             >
-              Votre Email ne pas valid.
+              Votre Email n'est pas valide.
             </small>
           </div>
         </div>
@@ -204,11 +204,13 @@
             type="text"
             class="form-control"
             id="address"
-            placeholder="Ex: '3 rue orinoco'"
-            pattern="^(([a-zA-ZÀ-ÿ0-9]+[\s\-]{1}[a-zA-ZÀ-ÿ0-9]+)){1,10}$"
-            required
+            placeholder="Votre address"
           />
+          <small id="adressvalid" class="form-text text-muted invalid-feedback">
+            Votre Address n'est pas valide.
+          </small>
         </div>
+
         <div class="col-md-3">
           <label for="validationDefault04" class="form-label">Ville</label>
           <input
@@ -216,9 +218,10 @@
             class="form-control"
             id="city"
             placeholder="Ex: 'orinococity'"
-            pattern="^(([a-zA-ZÀ-ÿ]+[\s\-]{1}[a-zA-ZÀ-ÿ]+)|([a-zA-ZÀ-ÿ]+)){1,10}$"
-            required
           />
+          <small id="cityvalid" class="form-text text-muted invalid-feedback">
+            Votre City n'est pas valide.
+          </small>
         </div>
         <div class="col-12">
           <div class="form-check">

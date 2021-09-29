@@ -66,9 +66,9 @@ if (basket.length < 1) {
     });
 
     //validation du formulaire et envoie en POST
+    const order = document.getElementById("order");
     const regexName = /^(([a-zA-ZÀ-ÿ]+[\s\-]{1}[a-zA-ZÀ-ÿ]+)|([a-zA-ZÀ-ÿ]+))$/;
      const regexMail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]{2,}\.[a-z]{2,4}$/;
-    const order = document.getElementById("order");
     const regexCity = /^(([a-zA-ZÀ-ÿ]+[\s\-]{1}[a-zA-ZÀ-ÿ]+)|([a-zA-ZÀ-ÿ]+)){1,10}$/;
     const regexAddress = /^(([a-zA-ZÀ-ÿ0-9]+[\s\-]{1}[a-zA-ZÀ-ÿ0-9]+)){1,10}$/;
     const checkBox = document.getElementById("invalidCheck2");
@@ -78,8 +78,7 @@ if (basket.length < 1) {
 const name = document.getElementById('firstName');
 name.addEventListener('blur', ()=>{
     console.log("name is blurred");
-    // Validate name here
-  
+    // validation prenom ici
     let str = firstName.value;
     console.log(regexName, str);
     if(regexName.test(str)){
@@ -99,7 +98,7 @@ name.addEventListener('blur', ()=>{
 const nom = document.getElementById('lastName');
 nom.addEventListener('blur', ()=>{
     console.log("name is blurred");
-    // Validate name here
+    // Validation nom ici
    
     let str = lastName.value;
     console.log(regexName, str);
@@ -115,11 +114,12 @@ nom.addEventListener('blur', ()=>{
         validUser = false;
         
     }
-})
+});
+
 const email = document.getElementById('email');
 email.addEventListener('blur', ()=>{
     console.log("email is blurred");
-    // Validate name here
+    // Validation Email ici
        
     let str = email.value;
     console.log(regexMail, str);
@@ -132,6 +132,46 @@ email.addEventListener('blur', ()=>{
     else{
         console.log('Your Email is not valid');
         email.classList.add('is-invalid');
+        validUser = false;
+        
+    }
+})
+const address = document.getElementById('address');
+address.addEventListener('blur', ()=>{
+    console.log("address is blurred");
+    // Validation Email ici
+       
+    let str = address.value;
+    console.log(regexAddress, str);
+    if(regexAddress.test(str)){
+        console.log('Your Adress is valid');
+       address.classList.remove('is-invalid');
+      
+        validUser = true;
+    }
+    else{
+        console.log('Your address is not valid');
+        address.classList.add('is-invalid');
+        validUser = false;
+        
+    }
+})
+const city = document.getElementById('city');
+city.addEventListener('blur', ()=>{
+    console.log("city is blurred");
+    // Validation city ici
+       
+    let str = city.value;
+    console.log(regexCity, str);
+    if(regexCity.test(str)){
+        console.log('Your city name is valid');
+       city.classList.remove('is-invalid');
+      
+        validUser = true;
+    }
+    else{
+        console.log('Your city name is not valid');
+        city.classList.add('is-invalid');
         validUser = false;
         
     }
