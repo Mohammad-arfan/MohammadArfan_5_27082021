@@ -81,6 +81,12 @@ function basketPreview() {
         }
         addBasketPreview.innerHTML = `Panier <span class="badge rounded-pill bg-secondary align-middle my-auto">${calculBasketPreview}</span>`;
     }
+
+
+
+
+
+    
 }
 
 // supprimer le Panier
